@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button, Text, View } from "react-native";
-
 import { styles } from "./styles";
 
 export function Vote() {
@@ -31,13 +30,14 @@ export function Vote() {
     if (quixada > fortaleza && quixada > juazeiro) {
       setWinner("Quixadá");
     }
-
-    if (fortaleza > quixada && fortaleza > juazeiro) {
+    else if (fortaleza > quixada && fortaleza > juazeiro) {
       setWinner("Fortaleza");
     }
-
-    if (juazeiro > quixada && juazeiro > fortaleza) {
+    else if (juazeiro > quixada && juazeiro > fortaleza) {
       setWinner("Juazeiro");
+    }
+    else{
+      setWinner("Houve empate!")
     }
     clear();
   }

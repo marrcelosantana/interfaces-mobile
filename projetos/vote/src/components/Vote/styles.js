@@ -48,7 +48,7 @@ export const styles = StyleSheet.create({
   },
 
   winnerName: {
-    fontSize: "1rem",
+    fontSize: "1.5rem",
     fontFamily: "sans-serif",
   },
 });
