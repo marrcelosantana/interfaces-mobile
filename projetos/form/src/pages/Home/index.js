@@ -9,7 +9,7 @@ export default function Home() {
   const [course, setCourse] = useState("");
   const [university, setUniversity] = useState("");
 
-  function sendName() {
+  function register() {
     alert(
       `Bem-vindo ${name}!\n Estudante do curso de ${course} na ${university}.`
     );
@@ -50,8 +50,8 @@ export default function Home() {
           />
         </View>
       </View>
-      <TouchableOpacity style={styles.button} onPress={sendName}>
-        Enviar
+      <TouchableOpacity style={styles.button} onPress={register}>
+        Cadastrar
       </TouchableOpacity>
     </View>
   );
