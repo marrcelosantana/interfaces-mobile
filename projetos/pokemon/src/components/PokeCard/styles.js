@@ -27,8 +27,23 @@ export const styles = StyleSheet.create({
   },
 
   name: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: "bold",
+  },
+
+  types: {
+    width: "100%",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
+    textTransform: "uppercase",
+  },
+
+  typeName: {
+    color: "#939393",
+    fontWeight: "bold"
   },
 
   buttons: {
