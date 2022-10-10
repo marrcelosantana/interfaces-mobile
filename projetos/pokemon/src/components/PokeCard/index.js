@@ -45,14 +45,9 @@ export default function PokeCard() {
           <Text style={styles.typeName}>{types[1]?.type.name}</Text>
         </View>
       </View>
-
       <View style={styles.buttons}>
-        <View style={styles.button}>
-          <Button title="Anterior" onPress={comeBack} />
-        </View>
-        <View style={styles.button}>
-          <Button title="Próximo" onPress={advance} />
-        </View>
+        <Button title="Anterior" onPress={comeBack} />
+        <Button title="Próximo" onPress={advance} />
       </View>
     </View>
   );
