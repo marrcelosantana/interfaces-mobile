@@ -16,7 +16,6 @@ export default function PokeCard() {
       .then((responseJson) => {
         setName(responseJson.name);
         setFrontImage(responseJson.sprites.other.home.front_default);
-        setAbilities(responseJson.abilities);
       })
       .catch((error) => {
         console.log(error);
