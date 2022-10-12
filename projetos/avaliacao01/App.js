@@ -11,8 +11,8 @@ export default function App() {
       {/* <Questao01 /> */}
       {/* <Questao02 /> */}
       {/* <Questao03 /> */}
-      <Questao04 />
-      {/* <Questao05 /> */}
+      {/* <Questao04 /> */}
+      <Questao05 />
     </View>
   );
 }
