@@ -9,10 +9,10 @@ export default function App() {
   return (
     <View style={styles.container}>
       {/* <Questao01 /> */}
-      {/* <Questao02 /> */}
+      <Questao02 />
       {/* <Questao03 /> */}
       {/* <Questao04 /> */}
-      <Questao05 />
+      {/* <Questao05 /> */}
     </View>
   );
 }
