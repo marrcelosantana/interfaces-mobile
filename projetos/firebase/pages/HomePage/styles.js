@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
 
   button: {
     width: "70%",
-    height: 50,
+    height: 60,
     backgroundColor: "#ccc9",
     color: "#ffff",
     fontWeight: "bold",
