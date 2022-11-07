@@ -1,11 +1,13 @@
+import { NavigationContainer } from "@react-navigation/native";
 import { StyleSheet, View } from "react-native";
 import Register from "./pages/Register";
+import Routes from "./routes";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Register />
-    </View>
+    <NavigationContainer style={styles.container}>
+      <Routes />
+    </NavigationContainer>
   );
 }
 

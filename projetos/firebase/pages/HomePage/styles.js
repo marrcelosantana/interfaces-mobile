@@ -7,4 +7,16 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
+  button: {
+    width: "70%",
+    height: 50,
+    backgroundColor: "#ccc9",
+    color: "#ffff",
+    fontWeight: "bold",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: "5px",
+  },
 });
