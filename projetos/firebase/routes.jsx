@@ -13,30 +13,30 @@ export default function Routes() {
       <Stack.Screen
         name="HomePage"
         component={HomePage}
-        options={{ title: "Home Page" }}
+        options={{ title: "Home Page 🏠" }}
       />
       <Stack.Screen
         name="RegisterStudents"
         component={RegisterStudents}
-        options={{ title: "Register Students" }}
+        options={{ title: "Register Students 👨‍🎓" }}
       />
 
       <Stack.Screen
         name="RegisterTeachers"
         component={RegisterTeachers}
-        options={{ title: "Register Teachers" }}
+        options={{ title: "Register Teachers 👨‍🏫" }}
       />
 
       <Stack.Screen
         name="ListStudents"
         component={ListStudents}
-        options={{ title: "Students" }}
+        options={{ title: "Students 👨‍🎓" }}
       />
 
       <Stack.Screen
         name="ListTeachers"
         component={ListTeachers}
-        options={{ title: "Teachers" }}
+        options={{ title: "Teachers 👨‍🏫" }}
       />
     </Stack.Navigator>
   );

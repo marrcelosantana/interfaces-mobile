@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 
-export default function RegisterTeachers(props) {
+export default function RegisterTeachers({ navigation }) {
   const [name, setName] = useState("");
   const [course, setCourse] = useState("");
   const [wage, setWage] = useState(0);
 
   function register() {
-    props.navigation.navigate("ListTeachers");
+    navigation.navigate("ListTeachers");
   }
 
   return (

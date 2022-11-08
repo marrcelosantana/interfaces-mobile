@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
+// import { doc, setDoc } from "firebase/firestore/";
+
 import { styles } from "./styles";
 
-export default function RegisterStudents(props) {
+export default function RegisterStudents({ navigation }) {
   const [name, setName] = useState("");
   const [course, setCourse] = useState("");
-  const [university, setUniversity] = useState("");
+  const [ira, setIra] = useState(0);
 
   function register() {
-    props.navigation.navigate("ListStudents");
+    navigation.navigate("ListStudents");
   }
 
   return (
@@ -38,10 +40,11 @@ export default function RegisterStudents(props) {
         <View style={styles.inputContent}>
           <Text style={styles.name}>Universidade: </Text>
           <TextInput
-            placeholder="Digite sua universidade..."
+            placeholder="Digite seu ira..."
             style={styles.input}
-            onChangeText={(university) => setUniversity(university)}
-            value={university}
+            onChangeText={(ira) => setIra(ira)}
+            keyboardType="numeric"
+            value={ira}
           />
         </View>
       </View>

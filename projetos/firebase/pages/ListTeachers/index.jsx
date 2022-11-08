@@ -2,13 +2,13 @@ import { Text, TouchableOpacity, View } from "react-native";
 
 import { styles } from "./styles";
 
-export default function ListTeachers(props) {
+export default function ListTeachers({ navigation }) {
   function goToRegisterTeachers() {
-    props.navigation.navigate("RegisterTeachers");
+    navigation.navigate("RegisterTeachers");
   }
 
   function goToHome() {
-    props.navigation.navigate("HomePage");
+    navigation.navigate("HomePage");
   }
 
   return (
