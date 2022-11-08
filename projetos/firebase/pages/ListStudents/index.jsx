@@ -2,23 +2,23 @@ import { Text, TouchableOpacity, View } from "react-native";
 
 import { styles } from "./styles";
 
-export default function HomePage(props) {
+export default function ListStudents(props) {
   function goToRegisterStudents() {
     props.navigation.navigate("RegisterStudents");
   }
 
-  function goToRegisterTeachers() {
-    props.navigation.navigate("RegisterTeachers");
+  function goToHome() {
+    props.navigation.navigate("HomePage");
   }
 
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.button} onPress={goToRegisterStudents}>
-        <Text>CADASTRAR ESTUDANTES</Text>
+        <Text>CADASTRAR</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={goToRegisterTeachers}>
-        <Text>CADASTRAR PROFESSORES</Text>
+      <TouchableOpacity style={styles.button} onPress={goToHome}>
+        <Text>PÁGINA INICIAL</Text>
       </TouchableOpacity>
     </View>
   );

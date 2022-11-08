@@ -2,18 +2,18 @@ import { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 
-export default function Register(props) {
+export default function RegisterTeachers(props) {
   const [name, setName] = useState("");
   const [course, setCourse] = useState("");
-  const [university, setUniversity] = useState("");
+  const [wage, setWage] = useState(0);
 
   function register() {
-    props.navigation.navigate("HomePage");
+    props.navigation.navigate("ListTeachers");
   }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>ADICIONAR ESTUDANTE</Text>
+      <Text style={styles.title}>ADICIONAR PROFESSOR</Text>
       <View style={styles.inputsContainer}>
         <View style={styles.inputContent}>
           <Text style={styles.name}>Nome: </Text>
@@ -36,12 +36,13 @@ export default function Register(props) {
         </View>
 
         <View style={styles.inputContent}>
-          <Text style={styles.name}>Universidade: </Text>
+          <Text style={styles.name}>Salário: </Text>
           <TextInput
-            placeholder="Digite sua universidade..."
+            placeholder="Digite seu salário..."
             style={styles.input}
-            onChangeText={(university) => setUniversity(university)}
-            value={university}
+            onChangeText={(wage) => setWage(wage)}
+            value={wage}
+            keyboardType="numeric"
           />
         </View>
       </View>

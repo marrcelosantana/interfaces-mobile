@@ -1,6 +1,9 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomePage from "./pages/HomePage";
-import Register from "./pages/Register";
+import ListStudents from "./pages/ListStudents";
+import ListTeachers from "./pages/ListTeachers";
+import RegisterStudents from "./pages/RegisterStudents";
+import RegisterTeachers from "./pages/RegisterTeachers";
 
 const Stack = createNativeStackNavigator();
 
@@ -10,12 +13,30 @@ export default function Routes() {
       <Stack.Screen
         name="HomePage"
         component={HomePage}
-        options={{ title: "HomePage" }}
+        options={{ title: "Home Page" }}
       />
       <Stack.Screen
-        name="Register"
-        component={Register}
-        options={{ title: "Register" }}
+        name="RegisterStudents"
+        component={RegisterStudents}
+        options={{ title: "Register Students" }}
+      />
+
+      <Stack.Screen
+        name="RegisterTeachers"
+        component={RegisterTeachers}
+        options={{ title: "Register Teachers" }}
+      />
+
+      <Stack.Screen
+        name="ListStudents"
+        component={ListStudents}
+        options={{ title: "Students" }}
+      />
+
+      <Stack.Screen
+        name="ListTeachers"
+        component={ListTeachers}
+        options={{ title: "Teachers" }}
       />
     </Stack.Navigator>
   );

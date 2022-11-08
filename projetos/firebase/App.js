@@ -1,6 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { StyleSheet, View } from "react-native";
-import Register from "./pages/Register";
+import { StyleSheet } from "react-native";
 import Routes from "./routes";
 
 export default function App() {
