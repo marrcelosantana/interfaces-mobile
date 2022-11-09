@@ -1,15 +1,34 @@
+import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { doc, setDoc } from "../../config/firebase";
+import { db } from "../../config/firebase";
 
 import { styles } from "./styles";
 
 export default function RegisterStudents({ navigation }) {
-  const [nome, setNome] = useState("");
-  const [curso, setCurso] = useState("");
+  const [name, setName] = useState("");
+  const [course, setCourse] = useState("");
   const [ira, setIra] = useState(0);
 
-  function register() {
-    navigation.navigate("ListStudents");
+  async function register() {
+    try {
+      const docRef = await addDoc(collection(db, "students"), {
+        name: name,
+        corse: course,
+        ira: ira,
+      });
+      clear();
+      navigation.navigate("ListStudents");
+    } catch (e) {
+      alert("Error adding document: ", e);
+    }
+  }
+
+  function clear() {
+    setName("");
+    setCourse("");
+    setIra(0);
   }
 
   return (
@@ -21,8 +40,8 @@ export default function RegisterStudents({ navigation }) {
           <TextInput
             placeholder="Digite o nome..."
             style={styles.input}
-            onChangeText={(nome) => setNome(nome)}
-            value={nome}
+            onChangeText={(name) => setName(name)}
+            value={name}
           />
         </View>
 
@@ -31,13 +50,13 @@ export default function RegisterStudents({ navigation }) {
           <TextInput
             placeholder="Digite seu curso..."
             style={styles.input}
-            onChangeText={(curso) => setCurso(curso)}
-            value={curso}
+            onChangeText={(course) => setCourse(course)}
+            value={course}
           />
         </View>
 
         <View style={styles.inputContent}>
-          <Text style={styles.name}>Universidade: </Text>
+          <Text style={styles.name}>Ira: </Text>
           <TextInput
             placeholder="Digite seu ira..."
             style={styles.input}
