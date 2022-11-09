@@ -4,8 +4,8 @@ import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 
 export default function RegisterStudents({ navigation }) {
-  const [name, setName] = useState("");
-  const [course, setCourse] = useState("");
+  const [nome, setNome] = useState("");
+  const [curso, setCurso] = useState("");
   const [ira, setIra] = useState(0);
 
   function register() {
@@ -21,8 +21,8 @@ export default function RegisterStudents({ navigation }) {
           <TextInput
             placeholder="Digite o nome..."
             style={styles.input}
-            onChangeText={(name) => setName(name)}
-            value={name}
+            onChangeText={(nome) => setNome(nome)}
+            value={nome}
           />
         </View>
 
@@ -31,8 +31,8 @@ export default function RegisterStudents({ navigation }) {
           <TextInput
             placeholder="Digite seu curso..."
             style={styles.input}
-            onChangeText={(course) => setCourse(course)}
-            value={course}
+            onChangeText={(curso) => setCurso(curso)}
+            value={curso}
           />
         </View>
 

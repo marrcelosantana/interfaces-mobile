@@ -3,9 +3,9 @@ import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 
 export default function RegisterTeachers({ navigation }) {
-  const [name, setName] = useState("");
-  const [course, setCourse] = useState("");
-  const [wage, setWage] = useState(0);
+  const [nome, setNome] = useState("");
+  const [curso, setCurso] = useState("");
+  const [salario, setSalario] = useState(0);
 
   function register() {
     navigation.navigate("ListTeachers");
@@ -20,7 +20,7 @@ export default function RegisterTeachers({ navigation }) {
           <TextInput
             placeholder="Digite o nome..."
             style={styles.input}
-            onChangeText={(name) => setName(name)}
+            onChangeText={(name) => setNome(name)}
             value={name}
           />
         </View>
@@ -30,8 +30,8 @@ export default function RegisterTeachers({ navigation }) {
           <TextInput
             placeholder="Digite seu curso..."
             style={styles.input}
-            onChangeText={(course) => setCourse(course)}
-            value={course}
+            onChangeText={(curso) => setCurso(curso)}
+            value={curso}
           />
         </View>
 
@@ -40,8 +40,8 @@ export default function RegisterTeachers({ navigation }) {
           <TextInput
             placeholder="Digite seu salário..."
             style={styles.input}
-            onChangeText={(wage) => setWage(wage)}
-            value={wage}
+            onChangeText={(salario) => setSalario(salario)}
+            value={salario}
             keyboardType="numeric"
           />
         </View>
