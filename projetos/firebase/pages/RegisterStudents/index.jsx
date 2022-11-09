@@ -1,7 +1,6 @@
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, getDocs } from "firebase/firestore";
 import { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
-import { doc, setDoc } from "../../config/firebase";
 import { db } from "../../config/firebase";
 
 import { styles } from "./styles";
