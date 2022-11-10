@@ -4,17 +4,14 @@ import ListStudents from "./pages/ListStudents";
 import ListTeachers from "./pages/ListTeachers";
 import RegisterStudents from "./pages/RegisterStudents";
 import RegisterTeachers from "./pages/RegisterTeachers";
+import UpdateStudents from "./pages/UpdateStudents";
+import UpdateTeachers from "./pages/UpdateTeachers";
 
 const Stack = createNativeStackNavigator();
 
 export default function Routes() {
   return (
     <Stack.Navigator>
-      <Stack.Screen
-        name="ListStudents"
-        component={ListStudents}
-        options={{ title: "Students 👨‍🎓" }}
-      />
       <Stack.Screen
         name="HomePage"
         component={HomePage}
@@ -33,9 +30,27 @@ export default function Routes() {
       />
 
       <Stack.Screen
+        name="ListStudents"
+        component={ListStudents}
+        options={{ title: "Students 👨‍🎓" }}
+      />
+
+      <Stack.Screen
         name="ListTeachers"
         component={ListTeachers}
         options={{ title: "Teachers 👨‍🏫" }}
+      />
+
+      <Stack.Screen
+        name="UpdateStudents"
+        component={UpdateStudents}
+        options={{ title: "Update 👨‍🎓" }}
+      />
+
+      <Stack.Screen
+        name="UpdateTeachers"
+        component={UpdateTeachers}
+        options={{ title: "Update 👨‍🏫" }}
       />
     </Stack.Navigator>
   );

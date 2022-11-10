@@ -26,4 +26,15 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     marginLeft: 5,
   },
+
+  actions: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexDirection: "row",
+  },
+
+  editBtn: {
+    marginRight: 10,
+  },
 });

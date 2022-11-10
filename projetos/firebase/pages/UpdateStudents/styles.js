@@ -43,17 +43,12 @@ export const styles = StyleSheet.create({
   button: {
     width: "100%",
     height: 50,
-    backgroundColor: "#5fcc6f",
+    backgroundColor: "#ccc9",
     color: "#ffff",
     fontWeight: "bold",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: "5px",
-  },
-
-  buttonText: {
-    color: "#fff",
-    fontWeight: "bold",
   },
 });

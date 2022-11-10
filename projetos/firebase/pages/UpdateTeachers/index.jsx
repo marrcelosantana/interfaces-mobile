@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 
-export default function RegisterTeachers({ navigation }) {
+export default function UpdateTeachers({ navigation }) {
   const [name, setName] = useState("");
   const [course, setCourse] = useState("");
   const [wage, setWage] = useState(0);
 
-  function register() {
-    navigation.navigate("ListTeachers");
+  function updateTeacher() {
+    navigation.navigate("UpdateTeachers");
   }
 
   return (
@@ -46,12 +46,8 @@ export default function RegisterTeachers({ navigation }) {
           />
         </View>
       </View>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={register}
-        disabled={name === "" || course === ""}
-      >
-        <Text style={styles.buttonText}>CADASTRAR</Text>
+      <TouchableOpacity style={styles.button} onPress={register}>
+        <Text>ATUALIZAR</Text>
       </TouchableOpacity>
     </View>
   );

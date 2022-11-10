@@ -1,4 +1,4 @@
-import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
 import { FlatList } from "react-native-web";
@@ -9,6 +9,7 @@ import { styles } from "./styles";
 
 export default function ListStudents({ navigation }) {
   const [students, setStudents] = useState([]);
+  const [size, setSize] = useState(0);
 
   function goToRegisterStudents() {
     navigation.navigate("RegisterStudents");
@@ -26,21 +27,14 @@ export default function ListStudents({ navigation }) {
         ...doc.data(),
         id: doc.id,
       });
+      setSize(size + 1);
     });
     setStudents(list);
   }
 
-  async function deleteStudent() {
-    const querySnapshot = await getDocs(collection(db, "students"));
-    querySnapshot.forEach((item) => {
-      deleteDoc(doc(db, "students", item.id));
-      initStudents();
-    });
-  }
-
   useEffect(() => {
     initStudents();
-  }, []);
+  }, [size]);
 
   return (
     <View style={styles.container}>

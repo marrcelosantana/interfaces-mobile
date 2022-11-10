@@ -1,23 +1,33 @@
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, updateDoc } from "firebase/firestore";
 import { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { db } from "../../config/firebase";
 
 import { styles } from "./styles";
 
-export default function RegisterStudents({ navigation }) {
-  const [name, setName] = useState("");
-  const [course, setCourse] = useState("");
-  const [ira, setIra] = useState(0);
+export default function UpdateStudents({ navigation, route }) {
+  const [name, setName] = useState(route.params.name);
+  const [course, setCourse] = useState(route.params.course);
+  const [ira, setIra] = useState(route.params.ira);
+  const idStudent = route.params.id;
 
-  async function register() {
+  // function updateStudent(name, course, ira, id) {
+  //   db.collection("students").doc(id).update({
+  //     name: name,
+  //     course: course,
+  //     ira: ira,
+  //   });
+  //   navigation.navigate("ListStudents");
+  // }
+
+  async function updateStudent(id) {
     try {
-      const docRef = await addDoc(collection(db, "students"), {
+      await updateDoc(collection(db, "students", id), {
         name: name,
         course: course,
         ira: ira,
+        id: idStudent,
       });
-      clear();
       navigation.navigate("ListStudents");
     } catch (e) {
       alert("Error adding document: ", e);
@@ -67,10 +77,12 @@ export default function RegisterStudents({ navigation }) {
       </View>
       <TouchableOpacity
         style={styles.button}
-        onPress={register}
+        onPress={() => {
+          updateStudent(name, course, ira, idStudent);
+        }}
         disabled={name === "" || course === ""}
       >
-        <Text style={styles.buttonText}>CADASTRAR</Text>
+        <Text>ATUALIZAR</Text>
       </TouchableOpacity>
     </View>
   );
