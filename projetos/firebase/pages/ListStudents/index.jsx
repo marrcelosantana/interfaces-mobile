@@ -4,12 +4,12 @@ import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
 import { FlatList } from "react-native-web";
 import StudentCard from "../../components/StudentCard";
 import { db } from "../../config/firebase";
+import StudentService from "../../service/StudentService";
 
 import { styles } from "./styles";
 
 export default function ListStudents({ navigation }) {
   const [students, setStudents] = useState([]);
-  const [size, setSize] = useState(0);
 
   function goToRegisterStudents() {
     navigation.navigate("RegisterStudents");
@@ -19,22 +19,15 @@ export default function ListStudents({ navigation }) {
     navigation.navigate("HomePage");
   }
 
-  async function initStudents() {
-    const querySnapshot = await getDocs(collection(db, "students"));
-    const list = [];
-    querySnapshot.forEach((doc) => {
-      list.push({
-        ...doc.data(),
-        id: doc.id,
-      });
-      setSize(size + 1);
+  function initStudents() {
+    StudentService.getStudents(db, (students) => {
+      setStudents(students);
     });
-    setStudents(list);
   }
 
   useEffect(() => {
     initStudents();
-  }, [size]);
+  }, []);
 
   return (
     <View style={styles.container}>
