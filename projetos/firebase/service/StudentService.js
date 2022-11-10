@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore";
+import { addDoc, collection, getDocs } from "firebase/firestore";
 
 export default class StudentService {
   static getStudents = (firestoreDb, callback) => {
@@ -11,6 +11,14 @@ export default class StudentService {
           students.push({ id, name, course, ira });
         });
         callback(students);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  static create = (firestoreDb, callback, student) => {
+    addDoc(collection(firestoreDb, "students"), student)
+      .then((docRef) => {
+        callback(docRef.id);
       })
       .catch((error) => console.log(error));
   };

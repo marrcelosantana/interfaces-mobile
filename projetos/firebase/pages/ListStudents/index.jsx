@@ -1,4 +1,3 @@
-import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
 import { FlatList } from "react-native-web";

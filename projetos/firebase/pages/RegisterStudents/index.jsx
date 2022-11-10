@@ -1,7 +1,7 @@
-import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { db } from "../../config/firebase";
+import StudentService from "../../service/StudentService";
 
 import { styles } from "./styles";
 
@@ -10,18 +10,16 @@ export default function RegisterStudents({ navigation }) {
   const [course, setCourse] = useState("");
   const [ira, setIra] = useState(0);
 
-  async function register() {
-    try {
-      const docRef = await addDoc(collection(db, "students"), {
-        name: name,
-        course: course,
-        ira: ira,
-      });
-      clear();
-      navigation.navigate("ListStudents");
-    } catch (e) {
-      alert("Error adding document: ", e);
-    }
+  function register() {
+    StudentService.create(
+      db,
+      (id) => {
+        alert(`Estudante ${id} inserido com sucesso!`);
+        clear();
+        navigation.navigate("ListStudents");
+      },
+      { name, course, ira }
+    );
   }
 
   function clear() {
