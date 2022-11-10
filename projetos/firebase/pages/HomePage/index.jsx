@@ -14,11 +14,11 @@ export default function HomePage({ navigation }) {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.button} onPress={goToRegisterStudents}>
-        <Text>CADASTRAR ESTUDANTES</Text>
+        <Text style={styles.buttonText}>CADASTRAR ESTUDANTES</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button} onPress={goToRegisterTeachers}>
-        <Text>CADASTRAR PROFESSORES</Text>
+        <Text style={styles.buttonText}>CADASTRAR PROFESSORES</Text>
       </TouchableOpacity>
     </View>
   );

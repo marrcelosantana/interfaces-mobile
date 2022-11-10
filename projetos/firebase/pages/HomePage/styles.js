@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   button: {
     width: "70%",
     height: 60,
-    backgroundColor: "#ccc9",
+    backgroundColor: "#5fcc6f",
     color: "#ffff",
     fontWeight: "bold",
     display: "flex",
@@ -19,5 +19,10 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 5,
     marginBottom: 20,
+  },
+
+  buttonText: {
+    color: "#fff",
+    fontWeight: "bold",
   },
 });
