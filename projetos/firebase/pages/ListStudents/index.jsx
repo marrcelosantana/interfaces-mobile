@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
 import { FlatList } from "react-native-web";
@@ -30,6 +30,14 @@ export default function ListStudents({ navigation }) {
     setStudents(list);
   }
 
+  async function deleteStudent() {
+    const querySnapshot = await getDocs(collection(db, "students"));
+    querySnapshot.forEach((item) => {
+      deleteDoc(doc(db, "students", item.id));
+      initStudents();
+    });
+  }
+
   useEffect(() => {
     initStudents();
   }, []);
@@ -39,7 +47,13 @@ export default function ListStudents({ navigation }) {
       <SafeAreaView style={styles.content}>
         <FlatList
           data={students}
-          renderItem={({ item }) => <StudentCard name={item.name} />}
+          renderItem={({ item }) => (
+            <StudentCard
+              name={item.name}
+              id={item.id}
+              initStudents={initStudents}
+            />
+          )}
           keyExtractor={(item) => item.id}
         />
         <View style={styles.buttons}>

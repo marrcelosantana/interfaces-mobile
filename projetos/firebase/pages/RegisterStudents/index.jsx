@@ -8,13 +8,13 @@ import { styles } from "./styles";
 export default function RegisterStudents({ navigation }) {
   const [name, setName] = useState("");
   const [course, setCourse] = useState("");
-  const [ira, setIra] = useState(0);
+  const [ira, setIra] = useState(undefined);
 
   async function register() {
     try {
       const docRef = await addDoc(collection(db, "students"), {
         name: name,
-        corse: course,
+        course: course,
         ira: ira,
       });
       clear();
