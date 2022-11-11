@@ -1,6 +1,4 @@
-# TELAS - Aplicação FireBase 🔥
-
-### Início
+# Telas - Aplicação Firebase 🔥
 
 Tela Inicial        |
 :-------------------------:|
