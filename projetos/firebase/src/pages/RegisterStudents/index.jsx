@@ -5,7 +5,7 @@ import StudentService from "../../service/StudentService";
 
 import { styles } from "./styles";
 
-export default function RegisterStudents({ navigation }) {
+export default function RegisterStudents({ navigation, route }) {
   const [name, setName] = useState("");
   const [course, setCourse] = useState("");
   const [ira, setIra] = useState(0);
@@ -20,6 +20,7 @@ export default function RegisterStudents({ navigation }) {
       },
       { name, course, ira }
     );
+    route.params.initStudents();
   }
 
   function clear() {

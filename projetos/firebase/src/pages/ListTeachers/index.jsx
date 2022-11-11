@@ -11,10 +11,6 @@ import { styles } from "./styles";
 export default function ListTeachers({ navigation }) {
   const [teachers, setTeachers] = useState([]);
 
-  function goToRegisterTeachers() {
-    navigation.navigate("RegisterTeachers");
-  }
-
   function initTeachers() {
     TeacherService.list(db, (teachers) => {
       setTeachers(teachers);
@@ -43,7 +39,11 @@ export default function ListTeachers({ navigation }) {
         <View style={styles.buttons}>
           <TouchableOpacity
             style={styles.button}
-            onPress={goToRegisterTeachers}
+            onPress={() => {
+              navigation.navigate("RegisterTeachers", {
+                initTeachers: initTeachers,
+              });
+            }}
           >
             <Text style={styles.buttonText}>CADASTRAR</Text>
             <Ionicons

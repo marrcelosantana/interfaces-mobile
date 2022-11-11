@@ -5,7 +5,7 @@ import TeacherService from "../../service/TeacherService";
 
 import { styles } from "./styles";
 
-export default function RegisterTeachers({ navigation }) {
+export default function RegisterTeachers({ navigation, route }) {
   const [name, setName] = useState("");
   const [course, setCourse] = useState("");
   const [salary, setSalary] = useState(0);
@@ -20,6 +20,7 @@ export default function RegisterTeachers({ navigation }) {
       },
       { name, course, salary }
     );
+    route.params.initTeachers();
   }
 
   function clear() {

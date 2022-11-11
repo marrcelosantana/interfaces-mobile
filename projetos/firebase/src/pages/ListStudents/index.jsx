@@ -11,10 +11,6 @@ import { styles } from "./styles";
 export default function ListStudents({ navigation }) {
   const [students, setStudents] = useState([]);
 
-  function goToRegisterStudents() {
-    navigation.navigate("RegisterStudents");
-  }
-
   function initStudents() {
     StudentService.list(db, (students) => {
       setStudents(students);
@@ -43,7 +39,11 @@ export default function ListStudents({ navigation }) {
         <View style={styles.buttons}>
           <TouchableOpacity
             style={styles.button}
-            onPress={goToRegisterStudents}
+            onPress={() => {
+              navigation.navigate("RegisterStudents", {
+                initStudents: initStudents,
+              });
+            }}
           >
             <Text style={styles.buttonText}>CADASTRAR</Text>
             <Ionicons
