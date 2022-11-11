@@ -13,11 +13,6 @@ export default function Routes() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="ListStudents"
-        component={ListStudents}
-        options={{ title: "Students 👨‍🎓" }}
-      />
-      <Stack.Screen
         name="HomePage"
         component={HomePage}
         options={{ title: "Home Page 🏠" }}
@@ -32,6 +27,12 @@ export default function Routes() {
         name="RegisterTeachers"
         component={RegisterTeachers}
         options={{ title: "Register Teachers 👨‍🏫" }}
+      />
+
+      <Stack.Screen
+        name="ListStudents"
+        component={ListStudents}
+        options={{ title: "Students 👨‍🎓" }}
       />
 
       <Stack.Screen

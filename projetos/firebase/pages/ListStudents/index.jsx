@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
 import { FlatList } from "react-native-web";
 import StudentCard from "../../components/StudentCard";
-import { db } from "../../config/firebase";
 import StudentService from "../../service/StudentService";
+import { db } from "../../config/firebase";
 
 import { styles } from "./styles";
 
