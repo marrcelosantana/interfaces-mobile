@@ -15,3 +15,9 @@ Listagem            |  Cadastro           | Atualização
 Listagem            |  Cadastro           | Atualização
 :-------------------------:|:-------------------------:|:-------------------------:
 <img src= "./prints/listTeachers.jpg">  |  <img src= "./prints/registerTeachers.jpg">  | <img src="./prints/updateTeachers.jpg">
+
+### Firebase
+
+Tabela Estudantes           |  Tabela Professores
+:-------------------------:|:-------------------------:
+<img src= "./prints/firebaseStudents.jpg">  |  <img src= "./prints/firebaseTeachers.jpg"> 
