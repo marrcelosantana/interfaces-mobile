@@ -7,9 +7,11 @@ import { Ionicons } from "@expo/vector-icons";
 import { db } from "../../config/firebase";
 
 import { styles } from "./styles";
+import StudentModal from "../../components/StudentModal";
 
 export default function ListStudents({ navigation }) {
   const [students, setStudents] = useState([]);
+  const [modalVisible, setModalVisible] = useState(false);
 
   function initStudents() {
     StudentService.list(db, (students) => {
@@ -27,12 +29,18 @@ export default function ListStudents({ navigation }) {
         <FlatList
           data={students}
           renderItem={({ item }) => (
-            <StudentCard
-              name={item.name}
-              id={item.id}
-              initStudents={initStudents}
-              navigation={navigation}
-            />
+            <TouchableOpacity
+              onPress={() => {
+                setModalVisible(true);
+              }}
+            >
+              <StudentCard
+                name={item.name}
+                id={item.id}
+                initStudents={initStudents}
+                navigation={navigation}
+              />
+            </TouchableOpacity>
           )}
           keyExtractor={(item) => item.id}
         />
@@ -54,6 +62,10 @@ export default function ListStudents({ navigation }) {
             />
           </TouchableOpacity>
         </View>
+        <StudentModal
+          modalVisible={modalVisible}
+          setModalVisible={setModalVisible}
+        />
       </SafeAreaView>
     </View>
   );

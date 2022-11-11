@@ -2,6 +2,8 @@
 
 ### Início
 
+Tela Inicial
+:-------------------------:
 <img src= "./prints/home.jpg">
 
 ### Estudantes
