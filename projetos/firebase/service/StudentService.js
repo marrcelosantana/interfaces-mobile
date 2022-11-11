@@ -1,7 +1,15 @@
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDoc,
+  getDocs,
+  updateDoc,
+} from "firebase/firestore";
 
 export default class StudentService {
-  static getStudents = (firestoreDb, callback) => {
+  static list = (firestoreDb, callback) => {
     getDocs(collection(firestoreDb, "students"))
       .then((snapshot) => {
         const students = [];
@@ -20,6 +28,30 @@ export default class StudentService {
       .then((docRef) => {
         callback(docRef.id);
       })
+      .catch((error) => console.log(error));
+  };
+
+  static getData = (firestoreDb, callback, id) => {
+    getDoc(doc(firestoreDb, "students", id))
+      .then((docSnap) => {
+        if (docSnap.exists()) {
+          callback(docSnap.data());
+        }
+      })
+      .catch((error) => console.log(error));
+  };
+
+  static update = (firestoreDb, callback, id, student) => {
+    updateDoc(doc(firestoreDb, "students", id), student)
+      .then(() => {
+        callback();
+      })
+      .catch((error) => console.log(error));
+  };
+
+  static delete = (firestoreDb, callback, id) => {
+    deleteDoc(doc(firestoreDb, "students", id))
+      .then(() => callback(true))
       .catch((error) => console.log(error));
   };
 }

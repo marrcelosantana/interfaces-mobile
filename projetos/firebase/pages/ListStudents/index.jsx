@@ -19,7 +19,7 @@ export default function ListStudents({ navigation }) {
   }
 
   function initStudents() {
-    StudentService.getStudents(db, (students) => {
+    StudentService.list(db, (students) => {
       setStudents(students);
     });
   }
@@ -38,6 +38,7 @@ export default function ListStudents({ navigation }) {
               name={item.name}
               id={item.id}
               initStudents={initStudents}
+              navigation={navigation}
             />
           )}
           keyExtractor={(item) => item.id}
