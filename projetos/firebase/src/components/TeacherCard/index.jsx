@@ -23,7 +23,10 @@ export default function TeacherCard({ navigation, name, id, initTeachers }) {
         <Pressable
           style={styles.editBtn}
           onPress={() => {
-            navigation.navigate("UpdateTeachers", { id: id });
+            navigation.navigate("UpdateTeachers", {
+              id: id,
+              initTeachers: initTeachers,
+            });
           }}
         >
           <FontAwesome5 name="user-edit" size={20} color="black" />

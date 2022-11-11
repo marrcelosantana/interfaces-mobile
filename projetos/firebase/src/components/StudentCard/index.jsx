@@ -23,7 +23,10 @@ export default function StudentCard({ navigation, name, id, initStudents }) {
         <Pressable
           style={styles.editBtn}
           onPress={() => {
-            navigation.navigate("UpdateStudents", { id: id });
+            navigation.navigate("UpdateStudents", {
+              id: id,
+              initStudents: initStudents,
+            });
           }}
         >
           <FontAwesome5 name="user-edit" size={20} color="black" />

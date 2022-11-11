@@ -33,6 +33,7 @@ export default function UpdateTeachers({ navigation, route }) {
       teacherId,
       { name, course, salary }
     );
+    route.params.initTeachers();
   }
 
   useEffect(() => {
@@ -41,7 +42,7 @@ export default function UpdateTeachers({ navigation, route }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>ATUALIZAR ESTUDANTE</Text>
+      <Text style={styles.title}>ATUALIZAR PROFESSOR</Text>
       <View style={styles.inputsContainer}>
         <View style={styles.inputContent}>
           <Text style={styles.name}>Nome: </Text>

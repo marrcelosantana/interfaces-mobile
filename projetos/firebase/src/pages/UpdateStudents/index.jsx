@@ -31,6 +31,7 @@ export default function UpdateStudents({ route, navigation }) {
       studentId,
       { name, course, ira }
     );
+    route.params.initStudents();
   }
 
   useEffect(() => {
