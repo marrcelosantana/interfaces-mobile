@@ -1,19 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import TeacherService from "../../service/TeacherService";
+import { db } from "../../config/firebase";
+
 import { styles } from "./styles";
 
-export default function UpdateTeachers({ navigation }) {
-  const [name, setName] = useState("");
-  const [course, setCourse] = useState("");
-  const [wage, setWage] = useState(0);
+export default function UpdateTeachers({ navigation, route }) {
+  const [name, setName] = useState(route.params.name);
+  const [course, setCourse] = useState(route.params.course);
+  const [salary, setSalary] = useState(route.params.salary);
+  const teacherId = route.params.id;
 
-  function updateTeacher() {
-    navigation.navigate("UpdateTeachers");
+  function getStudentData() {
+    TeacherService.getData(
+      db,
+      (student) => {
+        setName(student.name),
+          setCourse(student.course),
+          setSalary(student.salary);
+      },
+      teacherId
+    );
   }
+
+  function updateStudent() {
+    TeacherService.update(
+      db,
+      () => {
+        alert("Estudante atualizado com sucesso!");
+        navigation.navigate("ListTeachers");
+      },
+      teacherId,
+      { name, course, salary }
+    );
+  }
+
+  useEffect(() => {
+    getStudentData();
+  }, []);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>ADICIONAR PROFESSOR</Text>
+      <Text style={styles.title}>ATUALIZAR ESTUDANTE</Text>
       <View style={styles.inputsContainer}>
         <View style={styles.inputContent}>
           <Text style={styles.name}>Nome: </Text>
@@ -40,14 +68,18 @@ export default function UpdateTeachers({ navigation }) {
           <TextInput
             placeholder="Digite seu salário..."
             style={styles.input}
-            onChangeText={(wage) => setWage(wage)}
-            value={wage}
+            onChangeText={(salary) => setSalary(salary)}
             keyboardType="numeric"
+            value={salary}
           />
         </View>
       </View>
-      <TouchableOpacity style={styles.button} onPress={register}>
-        <Text>ATUALIZAR</Text>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={updateStudent}
+        disabled={name === "" || course === ""}
+      >
+        <Text style={styles.buttonText}>ATUALIZAR</Text>
       </TouchableOpacity>
     </View>
   );

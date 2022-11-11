@@ -1,14 +1,31 @@
 import { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { db } from "../../config/firebase";
+import TeacherService from "../../service/TeacherService";
+
 import { styles } from "./styles";
 
 export default function RegisterTeachers({ navigation }) {
   const [name, setName] = useState("");
   const [course, setCourse] = useState("");
-  const [wage, setWage] = useState(0);
+  const [salary, setSalary] = useState(0);
 
   function register() {
-    navigation.navigate("ListTeachers");
+    TeacherService.create(
+      db,
+      (id) => {
+        alert(`Professor ${id} inserido com sucesso!`);
+        clear();
+        navigation.navigate("ListTeachers");
+      },
+      { name, course, salary }
+    );
+  }
+
+  function clear() {
+    setName("");
+    setCourse("");
+    setSalary(0);
   }
 
   return (
@@ -40,9 +57,9 @@ export default function RegisterTeachers({ navigation }) {
           <TextInput
             placeholder="Digite seu salário..."
             style={styles.input}
-            onChangeText={(wage) => setWage(wage)}
-            value={wage}
+            onChangeText={(salary) => setSalary(salary)}
             keyboardType="numeric"
+            value={salary}
           />
         </View>
       </View>
