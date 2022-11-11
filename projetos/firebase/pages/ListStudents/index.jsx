@@ -3,6 +3,7 @@ import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
 import { FlatList } from "react-native-web";
 import StudentCard from "../../components/StudentCard";
 import StudentService from "../../service/StudentService";
+import { Ionicons } from "@expo/vector-icons";
 import { db } from "../../config/firebase";
 
 import { styles } from "./styles";
@@ -12,10 +13,6 @@ export default function ListStudents({ navigation }) {
 
   function goToRegisterStudents() {
     navigation.navigate("RegisterStudents");
-  }
-
-  function goToHome() {
-    navigation.navigate("HomePage");
   }
 
   function initStudents() {
@@ -48,11 +45,13 @@ export default function ListStudents({ navigation }) {
             style={styles.button}
             onPress={goToRegisterStudents}
           >
-            <Text style={styles.buttonText}>CADASTRAR MAIS</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.button} onPress={goToHome}>
-            <Text style={styles.buttonText}>PÁGINA INICIAL</Text>
+            <Text style={styles.buttonText}>CADASTRAR</Text>
+            <Ionicons
+              name="md-person-add-sharp"
+              size={18}
+              color="white"
+              style={{ marginLeft: 5 }}
+            />
           </TouchableOpacity>
         </View>
       </SafeAreaView>

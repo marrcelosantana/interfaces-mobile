@@ -5,11 +5,11 @@ import { styles } from "./styles";
 
 export default function HomePage({ navigation }) {
   function goToRegisterStudents() {
-    navigation.navigate("RegisterStudents");
+    navigation.navigate("ListStudents");
   }
 
   function goToRegisterTeachers() {
-    navigation.navigate("RegisterTeachers");
+    navigation.navigate("ListTeachers");
   }
 
   return (
@@ -21,11 +21,11 @@ export default function HomePage({ navigation }) {
         style={styles.icon}
       />
       <TouchableOpacity style={styles.button} onPress={goToRegisterStudents}>
-        <Text style={styles.buttonText}>CADASTRAR ESTUDANTES</Text>
+        <Text style={styles.buttonText}>ESTUDANTES</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button} onPress={goToRegisterTeachers}>
-        <Text style={styles.buttonText}>CADASTRAR PROFESSORES</Text>
+        <Text style={styles.buttonText}>PROFESSORES</Text>
       </TouchableOpacity>
     </View>
   );
