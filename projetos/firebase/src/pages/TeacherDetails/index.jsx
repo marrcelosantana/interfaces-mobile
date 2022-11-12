@@ -43,7 +43,11 @@ export default function TeacherDetails({ route }) {
         <strong>Curso:</strong> {course}
       </Text>
       <Text style={styles.text}>
-        <strong>Salário:</strong> {salary}
+        <strong>Salário:</strong>{" "}
+        {new Intl.NumberFormat("pt-BR", {
+          style: "currency",
+          currency: "BRL",
+        }).format(salary)}
       </Text>
     </View>
   );
