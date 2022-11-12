@@ -13,7 +13,7 @@ Listagem            |  Cadastro           | Atualização           | Detalhes
 ### Professores
 
 Listagem            |  Cadastro           | Atualização           | Detalhes
-:-------------------------:|:-------------------------:|:-------------------------:-------------------------:
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 <img src= "./prints/listTeachers.jpg">  |  <img src= "./prints/registerTeachers.jpg">  | <img src="./prints/updateTeachers.jpg">| <img src="./prints/teacherDetails.jpg">
 
 ### Firebase
