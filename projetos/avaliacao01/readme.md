@@ -1,17 +1,15 @@
 # QUESTÕES DA PROVA
 
-## QUESTÃO 01
+## QUESTÃO 01 e 02
 
-<img src= "./prints/questao01.PNG">
+01           |  02          |
+:-------------------------:|:-------------------------:
+<img src= "./prints/questao01.PNG"> |  <img src= "./prints/questao02.PNG"> 
 
-## QUESTÃO 02
+## QUESTÃO 03 e 04
 
-<img src= "./prints/questao02.PNG">
+03           |  04          |
+:-------------------------:|:-------------------------:
+<img src= "./prints/questao03.jpg"> |  <img src= "./prints/questoes04-05.jpg">
 
-## QUESTÃO 03
 
-<img src= "./prints/questao03.jpg">
-
-## QUESTÕES 04 E 05
-
-<img src= "./prints/questoes04-05.jpg">
