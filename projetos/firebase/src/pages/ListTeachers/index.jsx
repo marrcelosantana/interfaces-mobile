@@ -24,6 +24,7 @@ export default function ListTeachers({ navigation }) {
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.content}>
+        <Text style={styles.title}>PROFESSORES CADASTRADOS</Text>
         <FlatList
           data={teachers}
           renderItem={({ item }) => (

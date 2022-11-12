@@ -8,6 +8,12 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
+  title: {
+    fontSize: 22,
+    fontWeight: "bold",
+    marginBottom: 30,
+  },
+
   content: {
     width: "100%",
     display: "flex",
@@ -41,7 +47,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 5,
-    marginBottom: 20,
+    marginBottom: 30,
   },
 
   buttonText: {
