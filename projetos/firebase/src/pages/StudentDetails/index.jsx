@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
-import { db } from "../../config/firebase";
 import StudentService from "../../service/StudentService";
 import { FontAwesome5 } from "@expo/vector-icons";
+import { db } from "../../config/firebase";
 
 import { styles } from "./styles";
 
