@@ -5,6 +5,7 @@ import ListTeachers from "./pages/ListTeachers";
 import RegisterStudents from "./pages/RegisterStudents";
 import RegisterTeachers from "./pages/RegisterTeachers";
 import StudentDetails from "./pages/StudentDetails";
+import TeacherDetails from "./pages/TeacherDetails";
 import UpdateStudents from "./pages/UpdateStudents";
 import UpdateTeachers from "./pages/UpdateTeachers";
 
@@ -58,6 +59,12 @@ export default function Routes() {
         name="StudentDetails"
         component={StudentDetails}
         options={{ title: "Detalhes 👨‍🎓" }}
+      />
+
+      <Stack.Screen
+        name="TeacherDetails"
+        component={TeacherDetails}
+        options={{ title: "Detalhes 👨‍🏫" }}
       />
     </Stack.Navigator>
   );

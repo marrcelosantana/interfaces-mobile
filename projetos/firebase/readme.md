@@ -6,15 +6,15 @@ Tela Inicial        |
 
 ### Estudantes
 
-Listagem            |  Cadastro           | Atualização
-:-------------------------:|:-------------------------:|:-------------------------:
-<img src= "./prints/listStudents.jpg">  |  <img src= "./prints/registerStudents.jpg">  | <img src="./prints/updateStudents.jpg">
+Listagem            |  Cadastro           | Atualização           | Detalhes
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+<img src= "./prints/listStudents.jpg">  |  <img src= "./prints/registerStudents.jpg">  | <img src="./prints/updateStudents.jpg"> | <img src="./prints/studentDetails.jpg">
 
 ### Professores
 
-Listagem            |  Cadastro           | Atualização
-:-------------------------:|:-------------------------:|:-------------------------:
-<img src= "./prints/listTeachers.jpg">  |  <img src= "./prints/registerTeachers.jpg">  | <img src="./prints/updateTeachers.jpg">
+Listagem            |  Cadastro           | Atualização           | Detalhes
+:-------------------------:|:-------------------------:|:-------------------------:-------------------------:
+<img src= "./prints/listTeachers.jpg">  |  <img src= "./prints/registerTeachers.jpg">  | <img src="./prints/updateTeachers.jpg">| <img src="./prints/teacherDetails.jpg">
 
 ### Firebase
 

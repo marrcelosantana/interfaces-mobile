@@ -19,6 +19,7 @@ export default function StudentCard({ navigation, name, id, initStudents }) {
         onPress={() => {
           navigation.navigate("StudentDetails", { id: id });
         }}
+        style={styles.containerBtn}
       >
         <View style={styles.infoContainer}>
           <Ionicons name="person-circle-outline" size={24} color="black" />

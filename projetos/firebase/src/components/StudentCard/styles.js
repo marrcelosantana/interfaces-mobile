@@ -14,6 +14,14 @@ export const styles = StyleSheet.create({
     marginBottom: 10,
   },
 
+  containerBtn: {
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexDirection: "row",
+  },
+
   infoContainer: {
     display: "flex",
     alignItems: "center",

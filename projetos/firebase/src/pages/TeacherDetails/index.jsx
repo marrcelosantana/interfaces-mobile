@@ -1,35 +1,37 @@
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { db } from "../../config/firebase";
-import StudentService from "../../service/StudentService";
+import TeacherService from "../../service/TeacherService";
 import { FontAwesome5 } from "@expo/vector-icons";
 
 import { styles } from "./styles";
 
-export default function StudentDetails({ route }) {
+export default function TeacherDetails({ route }) {
   const [name, setName] = useState(route.params.name);
   const [course, setCourse] = useState(route.params.course);
-  const [ira, setIra] = useState(route.params.ira);
-  const studentId = route.params.id;
+  const [salary, setSalary] = useState(route.params.salary);
+  const teacherId = route.params.id;
 
-  function getStudentData() {
-    StudentService.getData(
+  function getTeacherData() {
+    TeacherService.getData(
       db,
       (student) => {
-        setName(student.name), setCourse(student.course), setIra(student.ira);
+        setName(student.name),
+          setCourse(student.course),
+          setSalary(student.salary);
       },
-      studentId
+      teacherId
     );
   }
 
   useEffect(() => {
-    getStudentData();
+    getTeacherData();
   }, []);
 
   return (
     <View style={styles.container}>
       <FontAwesome5
-        name="user-graduate"
+        name="user-tie"
         size={150}
         color="black"
         style={styles.icon}
@@ -41,7 +43,7 @@ export default function StudentDetails({ route }) {
         <strong>Curso:</strong> {course}
       </Text>
       <Text style={styles.text}>
-        <strong>IRA:</strong> {ira}
+        <strong>Salário:</strong> {salary}
       </Text>
     </View>
   );
