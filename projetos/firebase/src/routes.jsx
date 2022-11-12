@@ -4,6 +4,7 @@ import ListStudents from "./pages/ListStudents";
 import ListTeachers from "./pages/ListTeachers";
 import RegisterStudents from "./pages/RegisterStudents";
 import RegisterTeachers from "./pages/RegisterTeachers";
+import StudentDetails from "./pages/StudentDetails";
 import UpdateStudents from "./pages/UpdateStudents";
 import UpdateTeachers from "./pages/UpdateTeachers";
 
@@ -51,6 +52,12 @@ export default function Routes() {
         name="UpdateTeachers"
         component={UpdateTeachers}
         options={{ title: "Atualizar Professor 👨‍🏫" }}
+      />
+
+      <Stack.Screen
+        name="StudentDetails"
+        component={StudentDetails}
+        options={{ title: "Detalhes 👨‍🎓" }}
       />
     </Stack.Navigator>
   );

@@ -15,26 +15,32 @@ export default function StudentCard({ navigation, name, id, initStudents }) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.infoContainer}>
-        <Ionicons name="person-circle-outline" size={24} color="black" />
-        <Text style={styles.info}>{name}</Text>
-      </View>
-      <View style={styles.actions}>
-        <Pressable
-          style={styles.editBtn}
-          onPress={() => {
-            navigation.navigate("UpdateStudents", {
-              id: id,
-              initStudents: initStudents,
-            });
-          }}
-        >
-          <FontAwesome5 name="user-edit" size={20} color="black" />
-        </Pressable>
-        <Pressable onPress={deleteStudent}>
-          <MaterialIcons name="delete" size={24} color="black" />
-        </Pressable>
-      </View>
+      <Pressable
+        onPress={() => {
+          navigation.navigate("StudentDetails", { id: id });
+        }}
+      >
+        <View style={styles.infoContainer}>
+          <Ionicons name="person-circle-outline" size={24} color="black" />
+          <Text style={styles.info}>{name}</Text>
+        </View>
+        <View style={styles.actions}>
+          <Pressable
+            style={styles.editBtn}
+            onPress={() => {
+              navigation.navigate("UpdateStudents", {
+                id: id,
+                initStudents: initStudents,
+              });
+            }}
+          >
+            <FontAwesome5 name="user-edit" size={20} color="black" />
+          </Pressable>
+          <Pressable onPress={deleteStudent}>
+            <MaterialIcons name="delete" size={24} color="black" />
+          </Pressable>
+        </View>
+      </Pressable>
     </View>
   );
 }
